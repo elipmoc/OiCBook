@@ -13,3 +13,5 @@
 
 
 Route::get('/', 'LoginController@show');
+Route::get('/oauth', 'LoginController@oauth');
+Route::get('/oauth_callback', 'LoginController@oauth_callback');
