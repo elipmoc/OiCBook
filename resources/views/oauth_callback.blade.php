@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-
+認証コード「{{$token}}」
 </body>
 </html>
