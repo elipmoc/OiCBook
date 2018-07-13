@@ -25,8 +25,14 @@ class LoginController extends Controller
         $token = $this->provider->getAccessToken('authorization_code', [
             'code' => $_GET['code']
         ]);
+        $resourceOwner = $this->provider->getResourceOwner($token);
 
         $_SESSION['token'] = serialize($token);
-        return view('oauth_callback',['token'=>$_SESSION['token']]);
+        $_SESSION['resourceOwner'] = serialize($resourceOwner);
+        return redirect('/show_oauth');
+    }
+
+    public  function  show_oauth(){
+        return view('show_oauth',['token'=>$_SESSION['token'],"resourceOwner"=>$_SESSION['resourceOwner']]);
     }
 }
