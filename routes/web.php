@@ -13,6 +13,6 @@
 
 
 Route::get('/', 'LoginController@show');
-Route::get('/oauth', 'LoginController@oauth');
-Route::get('/oauth_callback', 'LoginController@oauth_callback');
-Route::get('/show_oauth', 'LoginController@show_oauth');
+Route::get('/oauth', 'GoogleAouthController@oauth');
+Route::get('/oauth_callback', 'GoogleAouthController@oauth_callback');
+Route::get('/show_oauth', 'GoogleAouthController@show_oauth');
